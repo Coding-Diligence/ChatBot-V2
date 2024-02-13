@@ -34,6 +34,7 @@ module.exports = {
     "global-require": 0,
     "eslint linebreak-style": [0, "error", "windows"],
     "@typescript-eslint/comma-dangle": 0,
-    "no-new": 0
+    "no-new": 0,
+    "import/extensions": ["error", {"js": "ignorePackages"}],
   }
 };
