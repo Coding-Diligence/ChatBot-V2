@@ -11,9 +11,9 @@ export default class BotController {
 
   addDefaultBots() {
     const defaultsBotsData = [
-      { name: 'Bot 1', actions: ['action1', 'action2'] },
-      { name: 'Bot 2', actions: ['action1', 'action2'] },
-      { name: 'Bot 3', actions: ['action1', 'action2'] }
+      { name: 'Bot 1', actions: ['action1', 'action2', 'action3'] },
+      { name: 'Bot 2', actions: ['action1', 'action2', 'action3'] },
+      { name: 'Bot 3', actions: ['action1', 'action2', 'action3'] }
     ];
 
     defaultsBotsData.forEach(botData => {

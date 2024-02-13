@@ -10,6 +10,8 @@ export default class BotModel {
         return this.action1();
       case 'action2':
         return this.action2();
+      case 'action3':
+        return this.action3();
       default:
         return `No action found for ${action}`;
     }
@@ -21,5 +23,9 @@ export default class BotModel {
 
   action2() {
     return `${this.name} is performing action 2`;
+  }
+
+  action3() {
+    return `${this.name} is performing action 3`;
   }
 }
