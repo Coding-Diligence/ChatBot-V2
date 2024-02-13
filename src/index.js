@@ -9,7 +9,7 @@ import MessageModel from './scripts/models/messageModel.js';
 // Views
 import AppView from './scripts/views/appView.js';
 import BotView from './scripts/views/botView.js';
-import MessageView from './scripts/views/messageView.js';   
+import MessageView from './scripts/views/messageView.js';
 
 // initialize Model
 const botModel = new BotModel();
@@ -26,10 +26,10 @@ const messageController = new MessageController();
 
 // Set up event listeners
 document.addEventListener('DOMContentLoaded', () => {
-    // Add event listeners for sending messages
-    appView.setupMessageInput(messageController.sendMessage.bind(messageController));
-    // Add event listeners for handling bot interactions
-    appView.setupBotInteraction(botController.interactWithBot.bind(botController));
-    // Add event listeners for handling chat interactions
-    appView.setupChatInteraction(chatController.interactWithChat.bind(chatController));
+  // Add event listeners for sending messages
+  appView.setupMessageInput(messageController.sendMessage.bind(messageController));
+  // Add event listeners for handling bot interactions
+  appView.setupBotInteraction(botController.interactWithBot.bind(botController));
+  // Add event listeners for handling chat interactions
+  appView.setupChatInteraction(chatController.interactWithChat.bind(chatController));
 });
