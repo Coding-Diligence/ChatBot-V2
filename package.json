@@ -1,20 +1,18 @@
 {
-    "name": "env-webpack-vanilla",
+    "name": "chatbot-io",
     "version": "1.0.0",
-    "description": "env webpack vanilla node20",
-    "main": "index.js",
+    "main": "src/index.js",
     "scripts": {
-        "start": "npx webpack-dev-server --mode development",
-        "dist": "npx webpack --mode production --progress=profile",
-        "lint": "eslint ."
+      "start": "webpack-dev-server --mode development --open",
+      "build": "webpack --mode production"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://gitlab.com/xzen769/env-webpack-vanilla.git"
+        "url": "git+https://github.com/Coding-Diligence/ChatBot-V2.git"
     },
     "author": "",
-    "license": "ISC",
-    "homepage": "https://gitlab.com/xzen769/env-webpack-vanilla/-/blob/main/README.md",
+    "license": "Coding-Diligence",
+    "homepage": "https://github.com/Coding-Diligence/ChatBot-V2/blob/main/README.md",
     "devDependencies": {
         "@babel/core": "^7.23.0",
         "@babel/eslint-parser": "^7.22.15",
