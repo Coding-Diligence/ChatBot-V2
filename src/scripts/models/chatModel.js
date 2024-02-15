@@ -4,34 +4,34 @@ export default class ChatModel {
     this.maxMessageCount = 50;
   }
 
-  processMessage(message) {
+  processMessage = (message) => {
     const formattedMessage = this.formatMessage(message);
     this.addMessage(formattedMessage);
     return formattedMessage;
-  }
+  };
 
-  formatMessage(message) {
+  formatMessage = (message) => {
     const timestamp = new Date().toLocaleString();
     return {
       text: message,
-      timestamp: timestamp,
+      timestamp,
       sender: 'User'
     };
-  }
+  };
 
-  addMessage(message) {
+  addMessage = (message) => {
     if (this.messages.length >= this.maxMessageCount) {
       this.messages.shift();
     }
     this.messages.push(message);
-  }
+  };
 
-  loadMessagesFromLocalStorage() {
+  loadMessagesFromLocalStorage = () => {
     const storedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
     this.messages = storedMessages.slice(-this.maxMessageCount);
-  }
+  };
 
-  saveMessagesToLocalStorage() {
+  saveMessagesToLocalStorage = () => {
     localStorage.setItem('chatMessages', JSON.stringify(this.messages));
-  }
+  };
 }
