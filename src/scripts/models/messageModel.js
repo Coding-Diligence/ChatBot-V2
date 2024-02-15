@@ -1,7 +1,7 @@
 export default class MessageModel {
   constructor() {
     this.messages = [];
-    this.maxMessageCount = 100; 
+    this.maxMessageCount = 100;
   }
 
   createMessage(text, sender = 'User') {
@@ -20,7 +20,7 @@ export default class MessageModel {
 
   loadMessagesFromLocalStorage() {
     const storedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-    this.messages = storedMessages.slice(-this.maxMessageCount); 
+    this.messages = storedMessages.slice(-this.maxMessageCount);
   }
 
   saveMessagesToLocalStorage() {

@@ -1,5 +1,5 @@
-import ChatModel from '../models/chatModel.js';
-import ChatView from '../views/chatView.js';
+import ChatModel from '../models/chatModel';
+import ChatView from '../views/chatView';
 
 export default class ChatController {
   constructor(chatModel, chatView) {
@@ -10,7 +10,7 @@ export default class ChatController {
   }
 
   setupEventListeners() {
-    document.getElementById('message-input').addEventListener('keypress', event => {
+    document.getElementById('message-input').addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
         this.interactWithChat(event.target.value);
         event.target.value = '';
@@ -38,6 +38,6 @@ export default class ChatController {
 
   loadInitialMessages() {
     const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-    messages.forEach(message => this.chatView.displayMessage(message));
+    messages.forEach((message) => this.chatView.displayMessage(message));
   }
 }

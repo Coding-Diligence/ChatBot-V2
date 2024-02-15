@@ -1,15 +1,15 @@
 // Controllers
-import BotController from './scripts/controllers/botController.js';
-import ChatController from './scripts/controllers/chatController.js';
-import MessageController from './scripts/controllers/messageController.js';
+import BotController from './scripts/controllers/botController';
+import ChatController from './scripts/controllers/chatController';
+import MessageController from './scripts/controllers/messageController';
 // Models
-import BotModel from './scripts/models/botModel.js';
-import ChatModel from './scripts/models/chatModel.js';
-import MessageModel from './scripts/models/messageModel.js';
+import BotModel from './scripts/models/botModel';
+import ChatModel from './scripts/models/chatModel';
+import MessageModel from './scripts/models/messageModel';
 // Views
-import AppView from './scripts/views/appView.js';
-import BotView from './scripts/views/botView.js';
-import MessageView from './scripts/views/messageView.js';
+import AppView from './scripts/views/appView';
+import BotView from './scripts/views/botView';
+import MessageView from './scripts/views/messageView';
 
 // initialize Model
 const botModel = new BotModel();

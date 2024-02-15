@@ -1,6 +1,6 @@
-import Router from './router.js';
-import HeaderView from './views/headerView.js';
-import FooterView from './views/footerView.js';
+import Router from './router';
+import HeaderView from './views/headerView';
+import FooterView from './views/footerView';
 
 export default class App {
   constructor() {

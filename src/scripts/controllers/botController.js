@@ -1,5 +1,5 @@
-import BotModel from '../models/botModel.js';
-import BotView from '../views/botView.js';
+import BotModel from '../models/botModel';
+import BotView from '../views/botView';
 
 export default class BotController {
   constructor(botModel, botView) {
@@ -16,7 +16,7 @@ export default class BotController {
       { name: 'Bot 3', actions: ['action1', 'action2', 'action3'] }
     ];
 
-    defaultsBotsData.forEach(botData => {
+    defaultsBotsData.forEach((botData) => {
       const newBot = new BotModel(botData.name, botData.actions);
       this.botModel.addBot(newBot);
     });

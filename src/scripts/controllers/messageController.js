@@ -1,5 +1,5 @@
-import MessageModel from '../models/messageModel.js';
-import MessageView from '../views/messageView.js';
+import MessageModel from '../models/messageModel';
+import MessageView from '../views/messageView';
 
 export default class MessageController {
   constructor(messageModel, messageView) {
@@ -9,7 +9,7 @@ export default class MessageController {
   }
 
   setupEventListeners() {
-    document.getElementById('message-input').addEventListener('keypress', event => {
+    document.getElementById('message-input').addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
         this.sendMessage(event.target.value);
         event.target.value = '';
@@ -30,13 +30,13 @@ export default class MessageController {
   }
 
   saveMessageToLocalStorage(message) {
-    let messages = JSON.parse(localStorage.getItem('messages')) || [];
+    const messages = JSON.parse(localStorage.getItem('messages')) || [];
     messages.push(message);
     localStorage.setItem('messages', JSON.stringify(messages));
   }
 
   loadMessagesFromLocalStorage() {
     const messages = JSON.parse(localStorage.getItem('messages')) || [];
-    messages.forEach(message => this.messageView.displayMessage(message));
+    messages.forEach((message) => this.messageView.displayMessage(message));
   }
 }

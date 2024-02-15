@@ -1,7 +1,7 @@
 export default class ChatModel {
   constructor() {
     this.messages = [];
-    this.maxMessageCount = 50; 
+    this.maxMessageCount = 50;
   }
 
   processMessage(message) {
@@ -21,14 +21,14 @@ export default class ChatModel {
 
   addMessage(message) {
     if (this.messages.length >= this.maxMessageCount) {
-      this.messages.shift(); 
+      this.messages.shift();
     }
     this.messages.push(message);
   }
 
   loadMessagesFromLocalStorage() {
     const storedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-    this.messages = storedMessages.slice(-this.maxMessageCount); 
+    this.messages = storedMessages.slice(-this.maxMessageCount);
   }
 
   saveMessagesToLocalStorage() {
