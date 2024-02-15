@@ -1,5 +1,5 @@
-import MessageModel from '../models/messageModel';
-import MessageView from '../views/messageView';
+import '../models/messageModel';
+import '../views/messageView';
 
 export default class MessageController {
   constructor(messageModel, messageView) {
@@ -11,8 +11,9 @@ export default class MessageController {
   setupEventListeners() {
     document.getElementById('message-input').addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
-        this.sendMessage(event.target.value);
-        event.target.value = '';
+        const messageInput = event.target;
+        this.sendMessage(messageInput.value);
+        messageInput.value = '';
       }
     });
 

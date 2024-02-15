@@ -1,5 +1,5 @@
-import ChatModel from '../models/chatModel';
-import ChatView from '../views/chatView';
+import '../models/chatModel';
+import '../views/chatView';
 
 export default class ChatController {
   constructor(chatModel, chatView) {
@@ -10,16 +10,20 @@ export default class ChatController {
   }
 
   setupEventListeners() {
-    document.getElementById('message-input').addEventListener('keypress', (event) => {
+    const messageInput = document.getElementById('message-input');
+
+    messageInput.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
-        this.interactWithChat(event.target.value);
-        event.target.value = '';
+        const inputValue = messageInput.value;
+        this.interactWithChat(inputValue);
+        messageInput.value = '';
+        event.preventDefault();
       }
     });
 
     document.getElementById('send-button').addEventListener('click', () => {
-      const messageInput = document.getElementById('message-input');
-      this.interactWithChat(messageInput.value);
+      const inputValue = messageInput.value;
+      this.interactWithChat(inputValue);
       messageInput.value = '';
     });
   }
@@ -31,7 +35,7 @@ export default class ChatController {
   }
 
   saveMessageToLocalStorage(message) {
-    let messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+    const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
     messages.push(message);
     localStorage.setItem('chatMessages', JSON.stringify(messages));
   }
