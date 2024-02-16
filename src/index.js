@@ -35,4 +35,6 @@ import render from './scripts/views/render';
 //   appView.setupChatInteraction(chatController.interactWithChat.bind(chatController));
 // });
 
+import './index.scss';
+
 render();
