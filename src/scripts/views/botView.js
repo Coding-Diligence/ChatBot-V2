@@ -14,11 +14,7 @@ const people = [
   { fullName: 'Matthew Wilson' },
   { fullName: 'Charlotte Garcia' },
   { fullName: 'Daniel Lopez' },
-  { fullName: 'Sophie Lee' },
-  { fullName: 'Alexander Taylor' },
-  { fullName: 'Grace Hernandez' },
-  { fullName: 'Joseph Moore' },
-  { fullName: 'Chloe Lewis' }
+  { fullName: 'Sophie Lee' }
 ];
 
 function generateBotCards(count) {
