@@ -1,8 +1,8 @@
 export default function renderHistorique() {
   return `
-    <div class="tab-pane fade" id="historique" role="tabpanel" aria-labelledby="historique-tab">
+    <div class="tab-pane d-flex flex-column mb-2 fade" id="historique" role="tabpanel" aria-labelledby="historique-tab">
         <div class="card">
-            <!-- Le contenu de l'historique va ici -->
+            <p>Historie</p>
             <div class="card-header d-flex justify-content-between p-3">
                 <p class="fw-bold mb-0">John Doe</p>
                 <p class="text-muted small mb-0">

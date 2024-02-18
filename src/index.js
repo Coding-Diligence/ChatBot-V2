@@ -3,6 +3,8 @@
 // import ChatController from './scripts/controllers/chatController';
 // import MessageController from './scripts/controllers/messageController';
 // // Models
+import renderHistorique from './scripts/views/historique';
+import renderBots from './scripts/views/botView';
 // import BotModel from './scripts/models/botModel';
 // import ChatModel from './scripts/models/chatModel';
 // import MessageModel from './scripts/models/messageModel';
@@ -36,5 +38,14 @@ import render from './scripts/views/render';
 // });
 
 import './index.scss';
+
+export default function renderTabsAndEventHandlers() {
+  const tabContentContainer = document.getElementById('myTabContent');
+  tabContentContainer.innerHTML = renderBots();
+
+  document.getElementById('historique-section').addEventListener('click', () => {
+    document.getElementById('historique').innerHTML = renderHistorique();
+  });
+}
 
 render();

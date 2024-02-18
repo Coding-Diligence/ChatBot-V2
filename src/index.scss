@@ -2,12 +2,15 @@ body {
   /* padding: 10px; */
   overflow: hidden;
   /* height: 100vh; */
+  // background-color: bl;
 }
 
 main {
   border: 1px solid grey;
   width: 95%;
   margin: 0 auto;
+  display: grid;
+  
 }
 
 nav {
@@ -18,4 +21,8 @@ nav {
 
 .container-fluid {
   width: 10% !important;
+}
+
+.chat {
+  height: 82vh;
 }

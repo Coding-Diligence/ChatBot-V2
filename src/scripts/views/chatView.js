@@ -19,6 +19,10 @@ export default function renderConversations() {
                   </div>
               </li>
           </ul>
+        <div class="input-group sticky-md-bottom mb-3">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Envoyer</button>
+        </div>
       </div>
     `;
 }
