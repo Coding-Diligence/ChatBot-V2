@@ -21,7 +21,7 @@ function generateBotCards(count) {
   let cardsHTML = '';
   for (let i = 0; i < count; i += 1) {
     cardsHTML += `
-      <div class="col-md-6 border col-lg-5 col-xl-4 mb-4 mb-md-0">
+      <div class="d-flex flex-column mb-2">
         <div class="card bot-card">
           <div class="card-body">
             <ul class="list-unstyled mb-0">
