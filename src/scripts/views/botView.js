@@ -51,19 +51,11 @@ export default function renderBots() {
       <li class="nav-item" role="presentation">
         <button class="nav-link active" id="bots-tab" data-bs-toggle="tab" data-bs-target="#bots" type="button" role="tab" aria-controls="bots" aria-selected="true">Bots</button>
       </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="historique-tab" data-bs-toggle="tab" data-bs-target="#historique" type="button" role="tab" aria-controls="historique" aria-selected="false">Historique</button>
-      </li>
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="bots" role="tabpanel" aria-labelledby="bots-tab">
         <div class="row" id="bots-container">
           ${generateBotCards(3)}
-        </div>
-      </div>
-      <div class="tab-pane fade" id="historique" role="tabpanel" aria-labelledby="historique-tab">
-        <div class="card">
-          <!-- Le contenu de l'historique va ici -->
         </div>
       </div>
     </div>
