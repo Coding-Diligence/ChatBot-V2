@@ -47,11 +47,7 @@ function generateBotCards(count) {
 
 export default function renderBots() {
   const html = `
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="bots-tab" data-bs-toggle="tab" data-bs-target="#bots" type="button" role="tab" aria-controls="bots" aria-selected="true">Bots</button>
-      </li>
-    </ul>
+    <h3> Bots</h3>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="bots" role="tabpanel" aria-labelledby="bots-tab">
         <div class="row" id="bots-container">

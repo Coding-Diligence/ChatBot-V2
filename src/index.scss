@@ -1,28 +1,59 @@
 body {
   /* padding: 10px; */
   overflow: hidden;
-  /* height: 100vh; */
-  // background-color: bl;
+  background-color: rgb(10, 2, 51);
 }
-
 main {
-  border: 1px solid grey;
   width: 95%;
   margin: 0 auto;
-  display: grid;
-  
 }
 
 nav {
   display: flex;
   flex-direction: row !important;
   justify-content: space-between;
+  background-color: rgb(7, 2, 31);
 }
-
 .container-fluid {
   width: 10% !important;
 }
-
 .chat {
   height: 82vh;
+  background-color: rgb(7, 2, 31);
+  border-radius: 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.chat_parent {
+width: 100%;
+display: flex;
+
+}
+.bot_msg{
+display: flex;
+align-self:flex-start;
+width: 80%;
+}
+.user_msg{
+display: flex;
+align-self:flex-end;
+width: 80%;
+margin-top: 22%;
+}
+.btn_parent{
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 18%;
+}
+
+h3{
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.background-bot{
+  background-color: rgb(7, 2, 31);
 }
