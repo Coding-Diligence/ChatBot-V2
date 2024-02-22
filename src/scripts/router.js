@@ -1,5 +1,4 @@
 import HomePage from './pages/homePage';
-import AboutPage from './pages/aboutPage';
 import ContactPage from './pages/contactPage';
 import NotFoundPage from './pages/notFoundPage';
 
@@ -7,7 +6,6 @@ export default class Router {
   constructor() {
     this.routes = {
       '/': HomePage,
-      '/about': AboutPage,
       '/contact': ContactPage
     };
   }

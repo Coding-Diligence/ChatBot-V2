@@ -13,7 +13,6 @@ import renderBots from './scripts/views/botView';
 // import BotView from './scripts/views/botView';
 // import MessageView from './scripts/views/messageView';
 import render from './scripts/views/render';
-
 // initialize Model
 // const botModel = new BotModel();
 // const chatModel = new ChatModel();
