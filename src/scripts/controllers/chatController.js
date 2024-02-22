@@ -1,47 +1,62 @@
-import '../models/chatModel';
-import '../views/chatView';
+import ChatModel from '../models/chatModel';
+import { renderConversations } from '../views/chatView';
 
 export default class ChatController {
-  constructor(chatModel, chatView) {
-    this.chatModel = chatModel;
-    this.chatView = chatView;
+  constructor() {
+    this.chatModel = new ChatModel();
     this.setupEventListeners();
     this.loadInitialMessages();
   }
 
   setupEventListeners() {
-    const messageInput = document.getElementById('message-input');
+    document.getElementById('send-button').addEventListener('click', () => {
+      this.handleSendMessage();
+    });
 
-    messageInput.addEventListener('keypress', (event) => {
+    document.getElementById('form-control').addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
-        const inputValue = messageInput.value;
-        this.interactWithChat(inputValue);
-        messageInput.value = '';
-        event.preventDefault();
+        this.handleSendMessage();
       }
     });
+  }
 
-    document.getElementById('send-button').addEventListener('click', () => {
-      const inputValue = messageInput.value;
+  handleSendMessage() {
+    const messageInput = document.getElementById('form-control');
+    const inputValue = messageInput.value.trim();
+    if (inputValue !== '') {
       this.interactWithChat(inputValue);
-      messageInput.value = '';
-    });
+      messageInput.value = ''; // Clear input field after sending message
+    }
   }
 
   interactWithChat(message) {
-    const processedMessage = this.chatModel.processMessage(message);
-    this.chatView.displayMessage(processedMessage);
-    this.saveMessageToLocalStorage(processedMessage);
+    const processedMessage = this.chatModel.processMessage(message, 'user');
+    this.updateView(processedMessage);
+    this.saveMessageToLocalStorage();
   }
 
-  saveMessageToLocalStorage(message) {
-    const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-    messages.push(message);
-    localStorage.setItem('chatMessages', JSON.stringify(messages));
+  updateView(message) {
+    const conversationSection = document.getElementById('conversations-section');
+    const conversationHTML = renderConversations([message]);
+    conversationSection.innerHTML += conversationHTML;
+    this.scrollChatToBottom();
+  }
+
+  scrollChatToBottom() {
+    const conversationSection = document.getElementById('conversations-section');
+    conversationSection.scrollTop = conversationSection.scrollHeight;
+  }
+
+  saveMessageToLocalStorage() {
+    this.chatModel.saveMessagesToLocalStorage();
   }
 
   loadInitialMessages() {
-    const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-    messages.forEach((message) => this.chatView.displayMessage(message));
+    this.chatModel.loadMessagesFromLocalStorage();
+    const messages = this.chatModel.messages;
+    const conversationSection = document.getElementById('conversations-section');
+    const conversationHTML = renderConversations(messages);
+    conversationSection.innerHTML = conversationHTML;
+    this.scrollChatToBottom();
   }
 }
