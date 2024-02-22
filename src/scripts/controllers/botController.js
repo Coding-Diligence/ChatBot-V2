@@ -1,5 +1,5 @@
 import BotModel from '../models/botModel';
-import '../views/botView';
+import  '../views/botView';
 
 export default class BotController {
   constructor(botModel, botView) {
