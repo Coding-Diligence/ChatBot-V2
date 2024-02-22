@@ -1,8 +1,9 @@
 body {
-  /* padding: 10px; */
+  padding: 10px;
   overflow: hidden;
   background-color: rgb(10, 2, 51);
 }
+
 main {
   width: 95%;
   margin: 0 auto;
@@ -14,46 +15,66 @@ nav {
   justify-content: space-between;
   background-color: rgb(7, 2, 31);
 }
+
 .container-fluid {
   width: 10% !important;
 }
+
 .chat {
   height: 82vh;
   background-color: rgb(7, 2, 31);
   border-radius: 15px;
   width: 100%;
   margin: 0 auto;
+  overflow-y: auto; // pour scroll
+}
+.user_msg,
+.bot_msg {
+  position: relative;
+  display: flex; 
+  align-items: flex; //ca met en haut ca
+  width: 100%;
 }
 
-.chat_parent {
-width: 100%;
-display: flex;
+.user_msg .card,
+.bot_msg .card {
+  position: relative;
+  max-width: 80%;
+  align-self: flex-start; //ca met en haut ca
+}
 
+.user_msg img,
+.bot_msg img {
+  width: 60px; 
+  height: auto; 
+  margin-right: 10px; 
 }
-.bot_msg{
-display: flex;
-align-self:flex-start;
-width: 80%;
+
+.bot_msg .card {
+  align-self: flex-end; 
 }
-.user_msg{
-display: flex;
-align-self:flex-end;
-width: 80%;
-margin-top: 22%;
+
+.bot_msg img {
+  margin-right: 0;
+  margin-left: 10px; 
 }
-.btn_parent{
+
+
+.btn_parent {
   width: 100%;
   display: flex;
   margin: 0 auto;
-  margin-top: 18%;
+  margin-top: 22%;
 }
 
-h3{
+h3 {
   background-color: white;
   border-radius: 10px;
   padding: 5px;
   text-align: center;
 }
-.background-bot{
+
+.background-bot {
   background-color: rgb(7, 2, 31);
 }
+  
