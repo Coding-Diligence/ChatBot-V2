@@ -1,17 +1,8 @@
-function generateRandomName() {
-  const firstNames = ['John', 'Emma', 'Michael', 'Sophia', 'William', 'Isabella', 'James', 'Olivia', 'Benjamin', 'Amelia', 'Ethan', 'Ava', 'Matthew', 'Charlotte', 'Daniel', 'Sophie'];
-  const lastNames = ['Smith', 'Johnson', 'Brown', 'Martinez', 'Anderson', 'Thomas', 'Jackson', 'White', 'Harris', 'Martin', 'Davis', 'Rodriguez', 'Wilson', 'Garcia', 'Lopez', 'Lee'];
-
-  const randomFirstName = firstNames[Math.floor(Math.random() * firstNames.length)];
-  const randomLastName = lastNames[Math.floor(Math.random() * lastNames.length)];
-
-  return `${randomFirstName} ${randomLastName}`;
-}
+const fullName = ['John', 'Emma', 'Michael', 'Sophia', 'William', 'Isabella', 'James', 'Olivia', 'Benjamin', 'Amelia', 'Ethan', 'Ava', 'Matthew', 'Charlotte', 'Daniel', 'Sophie'];
 
 function generateBotCards(count) {
   let cardsHTML = '';
   for (let i = 0; i < count; i += 1) {
-    const fullName = generateRandomName();
     const randomMessage = Math.random() < 0.5 ? 'Hello, are you there?' : 'How can I assist you today?';
 
     cardsHTML += `
@@ -24,7 +15,7 @@ function generateBotCards(count) {
                   <div class="d-flex flex-row">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-${i + 1}.webp" alt="avatar" class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
                     <div class="pt-1">
-                      <p class="fw-bold mb-0">${fullName}</p>
+                      <p class="fw-bold mb-0">${fullName[i]}</p>
                       <p class="small text-muted">${randomMessage}</p>
                     </div>
                   </div>  
