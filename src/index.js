@@ -1,5 +1,4 @@
 import Router from './scripts/router';
-import './scripts/views/botView';
 import render from './scripts/views/render';
 
 import './index.scss';
