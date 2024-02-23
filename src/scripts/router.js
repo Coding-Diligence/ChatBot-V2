@@ -1,42 +1,43 @@
-import HomePage from './pages/homePage';
-import ContactPage from './pages/contactPage';
-import NotFoundPage from './pages/notFoundPage';
+import Error404 from './controllers/Error404';
 
-export default class Router {
-  constructor() {
-    this.routes = {
-      '/': HomePage,
-      '/contact': ContactPage
-    };
+const Router = class {
+  constructor(routes = []) {
+    this.path = window.location.pathname;
+    this.params = !window.location.search ? {} : Object.fromEntries(
+      window.location.search
+        .split('?')[1]
+        .split('&')
+        .map((param) => param.split('='))
+    );
+    this.routes = routes;
+
+    this.run();
   }
 
-  init() {
-    this.renderPage();
-    window.addEventListener('popstate', () => this.renderPage());
-  }
+  startController() {
+    let ifExist = false;
 
-  renderPage() {
-    const path = window.location.pathname;
-    const Page = this.routes[path] || NotFoundPage;
-    const params = this.parseParams(path);
-    const pageInstance = new Page(params);
-    pageInstance.render();
-  }
+    for (let i = 0; i < this.routes.length; i += 1) {
+      const route = this.routes[i];
 
-  parseParams(path) {
-    const params = {};
-    const queryString = window.location.search;
-    if (queryString) {
-      const searchParams = new URLSearchParams(queryString);
-      for (const [key, value] of searchParams.entries()) {
-        params[key] = value;
+      if (route.url === this.path) {
+        const Controller = route.controller;
+
+        new Controller(this.params);
+        ifExist = true;
+
+        break;
       }
     }
-    return params;
+
+    if (!ifExist) {
+      new Error404();
+    }
   }
 
-  navigateTo(path) {
-    window.history.pushState({}, '', path);
-    this.renderPage();
+  run() {
+    this.startController();
   }
-}
+};
+
+export default Router;

@@ -1,25 +1,19 @@
-const people = [
-  { fullName: 'John Smith' },
-  { fullName: 'Emma Johnson' },
-  { fullName: 'Michael Brown' },
-  { fullName: 'Sophia Martinez' },
-  { fullName: 'William Anderson' },
-  { fullName: 'Isabella Thomas' },
-  { fullName: 'James Jackson' },
-  { fullName: 'Olivia White' },
-  { fullName: 'Benjamin Harris' },
-  { fullName: 'Amelia Martin' },
-  { fullName: 'Ethan Davis' },
-  { fullName: 'Ava Rodriguez' },
-  { fullName: 'Matthew Wilson' },
-  { fullName: 'Charlotte Garcia' },
-  { fullName: 'Daniel Lopez' },
-  { fullName: 'Sophie Lee' }
-];
+function generateRandomName() {
+  const firstNames = ['John', 'Emma', 'Michael', 'Sophia', 'William', 'Isabella', 'James', 'Olivia', 'Benjamin', 'Amelia', 'Ethan', 'Ava', 'Matthew', 'Charlotte', 'Daniel', 'Sophie'];
+  const lastNames = ['Smith', 'Johnson', 'Brown', 'Martinez', 'Anderson', 'Thomas', 'Jackson', 'White', 'Harris', 'Martin', 'Davis', 'Rodriguez', 'Wilson', 'Garcia', 'Lopez', 'Lee'];
+
+  const randomFirstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+  const randomLastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+
+  return `${randomFirstName} ${randomLastName}`;
+}
 
 function generateBotCards(count) {
   let cardsHTML = '';
   for (let i = 0; i < count; i += 1) {
+    const fullName = generateRandomName();
+    const randomMessage = Math.random() < 0.5 ? 'Hello, are you there?' : 'How can I assist you today?';
+
     cardsHTML += `
       <div class="d-flex flex-column mb-2">
         <div class="card bot-card">
@@ -30,8 +24,8 @@ function generateBotCards(count) {
                   <div class="d-flex flex-row">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-${i + 1}.webp" alt="avatar" class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
                     <div class="pt-1">
-                      <p class="fw-bold mb-0">${people[i].fullName}</p>
-                      <p class="small text-muted">Hello, Are you there?</p>
+                      <p class="fw-bold mb-0">${fullName}</p>
+                      <p class="small text-muted">${randomMessage}</p>
                     </div>
                   </div>  
                 </a>
@@ -45,7 +39,7 @@ function generateBotCards(count) {
   return cardsHTML;
 }
 
-export default function renderBots() {
+function renderBots() {
   const html = `
     <h3> Bots</h3>
     <div class="tab-content" id="myTabContent">
@@ -59,3 +53,5 @@ export default function renderBots() {
 
   return html;
 }
+
+export default renderBots;
