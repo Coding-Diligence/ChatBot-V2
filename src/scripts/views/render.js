@@ -4,7 +4,7 @@ import { renderConversations } from './chatView';
 export default function render() {
   const botsSection = renderBots();
   const messages = [
-    { sender: 'user', text: 'coucouu', time: '12 mins ago' },
+    { sender: 'user', text: 'coucou', time: '12 mins ago' },
     { sender: 'bot', text: 'Hello there!', time: '14 mins ago' },
     { sender: 'user', text: 'coucouu', time: '12 mins ago' },
     { sender: 'user', text: 'coucouu', time: '12 mins ago' },
@@ -15,3 +15,5 @@ export default function render() {
   document.getElementById('bots-section').innerHTML = botsSection;
   document.getElementById('conversations-section').innerHTML = conversationsSection;
 }
+
+render();
