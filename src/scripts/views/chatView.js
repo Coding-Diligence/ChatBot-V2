@@ -22,7 +22,7 @@ export function renderChatUser(message, time) {
 }
 
 export function renderBotMessage(sender, message, time) {
-  return `
+  return (`
     <ul class="list-unstyled bot_msg">
       <li class="d-flex justify-content-between mb-4">
         <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar" class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
@@ -41,7 +41,7 @@ export function renderBotMessage(sender, message, time) {
         </div>
       </li>
     </ul>
-  `;
+  `);
 }
 
 export function renderConversations(messages) {
@@ -54,8 +54,8 @@ export function renderConversations(messages) {
     }
   });
 
-  return `
-    <div class="col-md-6 col-lg-7 col-xl-8 chat_parent">
+  return (`
+    <div class="chat_parent">
       ${conversationHTML}
     </div>
     <div class="btn_parent">
@@ -64,5 +64,5 @@ export function renderConversations(messages) {
         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Envoyer</button>
       </div>
     </div>
-  `;
+  `);
 }
