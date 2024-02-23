@@ -70,9 +70,11 @@ nav {
 
 .btn_parent {
   position: fixed;
-  width: 55%;
+  width: 51%;
   display: flex;
-  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+  // margin: 0 auto;
   // margin-top: 5%;
 }
 
@@ -90,4 +92,5 @@ h3 {
 .chat_parent{
   overflow-y: auto !important;
   height: 65vh;
+  margin: 15px;
 }
