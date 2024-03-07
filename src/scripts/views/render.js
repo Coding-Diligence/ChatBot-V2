@@ -1,6 +1,5 @@
 import renderBots from './botView';
 import { renderConversations } from './chatView';
-import { messageHandler } from './messageHandler';
 
 const fullName = ['John', 'Emma', 'Michael', 'Sophia', 'William', 'Isabella', 'James', 'Olivia', 'Benjamin', 'Amelia', 'Ethan', 'Ava', 'Matthew', 'Charlotte', 'Daniel', 'Sophie'];
 
