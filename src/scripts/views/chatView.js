@@ -4,7 +4,7 @@ export function renderChatUser(message, time, profileImage = 'https://mdbcdn.b-c
       <li class="d-flex justify-content-between mb-4">
         <div class="card">
           <div class="card-header d-flex justify-content-between p-3">
-            <p class="fw-bold mb-0">Me</p>
+            <p class="fw-bold mb-0 m-1">Me</p>
             <p class="text-muted small mb-0">
               <i class="far fa-clock"></i> ${time}
             </p>
@@ -71,7 +71,7 @@ export function renderConversations(messages) {
     </div>
     <div class="btn_parent">
       <div class="input-group sticky-md-bottom mb-3">
-        <input type="text" class="form-control" placeholder="Type your text" aria-label="Type your text" aria-describedby="button-addon2">
+        <input type="text" class="form-control messageInput" placeholder="Type your text" aria-label="Type your text" aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Send</button>
       </div>
     </div>
