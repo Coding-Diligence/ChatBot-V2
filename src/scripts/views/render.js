@@ -1,5 +1,6 @@
 import renderBots from './botView';
 import { renderConversations } from './chatView';
+import messageHandler from './messageHandler';
 
 const fullName = ['John', 'Emma', 'Michael', 'Sophia', 'William', 'Isabella', 'James', 'Olivia', 'Benjamin', 'Amelia', 'Ethan', 'Ava', 'Matthew', 'Charlotte', 'Daniel', 'Sophie'];
 
@@ -29,12 +30,16 @@ export default function render() {
   document.getElementById('conversations-section').innerHTML = conversationsSection;
 }
 
-document.getElementById('button-addon2').addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const messageInput = document.querySelector('.messageInput');
-  const message = messageInput.value;
-  messageHandler(message);
-  // là je rremets le champs vide une fois que le message est envoyé
-  messageInput.value = '';
-});
+  const btn = document.querySelector('.button-addon2');
 
-render();
+  btn.addEventListener('click', () => {
+    const message = messageInput.value;
+    messageHandler(message);
+    // Réinitialiser le champ de saisie une fois le message envoyé
+    messageInput.value = '';
+  });
+
+  render(); // Appeler la fonction render après que le DOM est chargé
+});
