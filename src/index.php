@@ -1,5 +1,6 @@
 <?php 
 include 'scripts/services/database.php';
+include 'scripts/views/chatView.php';
 var_dump($_SESSION);
 ?>
 <a href="logout.php">logout</a>
