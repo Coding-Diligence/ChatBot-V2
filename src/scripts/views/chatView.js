@@ -71,9 +71,17 @@ export function renderConversations(messages) {
     </div>
     <div class="btn_parent">
       <div class="input-group sticky-md-bottom mb-3">
-        <input type="text" class="form-control" placeholder="Type your text" aria-label="Type your text" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Send</button>
+        <input type="text" name="message" id="message" placeholder="Type your text" aria-label="Type your text" aria-describedby="button-addon2">
+        <button onclick="sendMessage()" class="btn btn-outline-secondary" type="submit" id="button-addon2">Send</button>
       </div>
     </div>
   `);
+}
+function sendMessage() {
+  const message = userInput.value.trim();
+  if (message !== '') {
+    displayMessage('User', message);
+    userInput.value = '';
+    simulateBotResponse(message);
+  }
 }
