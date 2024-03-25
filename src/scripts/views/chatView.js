@@ -1,10 +1,12 @@
+import messageHandler from './messageHandler';
+
 export function renderChatUser(message, time, profileImage = 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-7.webp') {
   return `
     <ul class="list-unstyled user_msg">
       <li class="d-flex justify-content-between mb-4">
         <div class="card">
           <div class="card-header d-flex justify-content-between p-3">
-            <p class="fw-bold mb-0">Me</p>
+            <p class="fw-bold mb-0 m-1">Me</p>
             <p class="text-muted small mb-0">
               <i class="far fa-clock"></i> ${time}
             </p>
@@ -71,8 +73,8 @@ export function renderConversations(messages) {
     </div>
     <div class="btn_parent">
       <div class="input-group sticky-md-bottom mb-3">
-        <input type="text" name="message" id="message" placeholder="Type your text" aria-label="Type your text" aria-describedby="button-addon2">
-        <button onclick="sendMessage()" class="btn btn-outline-secondary" type="submit" id="button-addon2">Send</button>
+        <input type="text" id="message" class="form-control messageInput" placeholder="Type your text" aria-label="Type your text" aria-describedby="button-addon2">
+        ${messageHandler()};
       </div>
     </div>
   `);
