@@ -79,3 +79,11 @@ export function renderConversations(messages) {
     </div>
   `);
 }
+function sendMessage() {
+  const message = userInput.value.trim();
+  if (message !== '') {
+    displayMessage('User', message);
+    userInput.value = '';
+    simulateBotResponse(message);
+  }
+}

@@ -1,6 +1,13 @@
+<?php 
+include 'scripts/services/database.php';
+var_dump($_SESSION);
+?>
+<a href="logout.php">logout</a>
+<script>
+
 import Router from './scripts/router';
 import render from './scripts/views/render';
-
+import './scripts/services/apiService';
 import './index.scss';
 
 const routes = [{
@@ -9,3 +16,4 @@ const routes = [{
 }];
 
 new Router(routes);
+</script>
